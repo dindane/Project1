@@ -1,0 +1,68 @@
+//var calculate = function(){	
+	
+/*	$('#loading').hide(); // ladenprentje verstoppe bij t begin
+	$(".code").live("keypress", function(e){
+  	if (e.keyCode == 9 ) {
+  		// rij waarin we zitte zoeken en opslaan
+  		var row = $(this).closest(".item-row"),
+  		// code die we ingeven
+		code = row.find(".code").val();
+  		if (code != ""){
+		    var eenheidsprijs = row.find("textarea.cost").val();   
+			$.post("../index.php/welcome/get_price", {
+			    code: row.find(".code").val()
+			  }, function(response){
+					//row.find(".cost,.qty").html(response);
+					row.find(".cost").html("&#8364;"+roundNumber(response,2));
+					//row.find(".description").text(roundNumber(response,2));
+					$("input[type='text']").change( function() {
+					  // check input ($(this).val()) for validity here
+					  update_price();
+					});
+			  });		
+				return false;					
+		}else{
+			alert("gelieve code op te geven");
+		}
+	}	  
+   }); 	*/
+  
+  
+  
+/*
+  	$('#loading').hide(); // ladenprentje verstoppe bij t begin
+	$(".code").live("keypress", function(e){
+  	if (e.keyCode == 9 ) {
+  		// rij waarin we zitte zoeken en opslaan
+  		var row = $(this).closest(".item-row"),
+  		// code die we ingeven
+		code = row.find(".code").val();
+  		if (code != ""){	
+		$.getJSON("../js/producten.js", function(json) {	
+			// door het fileke loopen producten.js
+			$.each(json.channel.items,function(i,item) {
+				// als het itemke in den array items[i] overeenkomt met de naam da ik opgeef
+				// dus hij kijkt eerst naar item 0 in arrayn dan 1 dan 2, ...
+				if(json.channel.items[i].code == code) {
+					 GezochtePrijs = json.channel.items[i].prijs;
+					 GezochteOmschrijving = json.channel.items[i].omschrijving;
+					 row.find(".cost").html("&#8364;"+GezochtePrijs);
+ 		 		     row.find(".description").html(GezochteOmschrijving);
+					// alert("DEBUG: Item werd gevonden");	
+				}
+			});	 // end each json
+		});// end json		
+		//end if code
+		}else{
+			alert("gelieve code op te geven");
+		}
+	}	// end if keycode 
+   }); // end function   	
+   update_price();		
+};
+
+$(document).ready(function() {
+	calculate();
+	
+});
+*/

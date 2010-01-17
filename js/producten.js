@@ -1,0 +1,1 @@
+{"channel":{"items":[{"id":"1","code":"k1","prijs":"10.20","omschrijving":"Knippen"},{"id":"2","code":"w1","prijs":"20.39","omschrijving":"Wassen"},{"id":"3","code":"abc","prijs":"13.84","omschrijving":"Kleuring + verzorging"}]}}
