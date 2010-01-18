@@ -29,8 +29,19 @@ class Welcome extends Controller {
 		$prijs = $this->M_factuur->get_price();
 		echo $prijs['prijs'];
     }
+    function factureer() {
+		if(isset($_POST['send'])){
+		// eerste manier 
+		print_r($_POST['code']);
+    	// tweede manier
+    	   $code = $_POST['code'];
+		   $n        = count($code);
+		  for ($i = 0; $i < $n; $i++) {
+		      echo $code[$i]."<br/>";
+		   }
+		} 
+	}
 }
-
 /* End of file welcome.php */
 /* Location: ./system/application/controllers/welcome.php */
 ?>

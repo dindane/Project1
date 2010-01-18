@@ -69,11 +69,11 @@ var calculate = function(){
 $(document).ready(function() {
 	calculate();
 	check();	
-	$('#test').hide();
+	$('#test').hide(); //eerste rij verbergen (later is oplossen op betere manier)
 });
 </script>
 	<div id="page-wrap">
-		<div id="header">FACTUUR</div>
+		<div id="header">MAAK FACTUUR</div>
 		<div id="identity">		
             <div id="address">
 			Kristof s<br/>
@@ -88,10 +88,11 @@ $(document).ready(function() {
 		<div style="clear:both"></div>
 		<div id="customer">
             <span id="customer-title">Tip klantnaam</span>
-			<form>
+	<?php echo '<form  method="post" action="'.base_url().'welcome/factureer">';?>		
 				<div style="clear:both"></div>
 				<span>
-					<input type="text" size="30" value="" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" />
+					<input type="text" size="30" value="" name="naam[]" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" />
+					<input type="text" size="30" value="" name="naam[]" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" />
 				<span id="alert"></span>
 				</span>
 				<div class="suggestionsBox" id="suggestions" style="display: none;">
@@ -100,7 +101,7 @@ $(document).ready(function() {
 							&nbsp;
 						</div>
 				</div>
-		</form>
+		
             <table id="meta">
                 <tr>
                     <td class="meta-head"><strong>Factuur #</strong></td>
@@ -115,7 +116,7 @@ $(document).ready(function() {
 		
 		</div>		
 		<table id="items">
-<?php echo '<form name="factuur" method="post" id="factuur" action="'.base_url().'index.php/welcome/get_price">';?>		
+
 		  <tr>
 		      <th>Code</th>
 		      <th>Omschrijving</th>
@@ -125,11 +126,11 @@ $(document).ready(function() {
 		  </tr>
 		  <div >
 		  <tr id="test" class="item-row">
-		      <td class="item-name"><div class="delete-wpr"><textarea name="code" class="code"></textarea></div></td>
-		      <td class="description"><span></span></td>
-		      <td><textarea class="cost" ></textarea></td>
-		      <td><textarea class="qty"></textarea></td>
-		      <td><span class="price"></span></td>
+		      <td class="item-name"><div class="delete-wpr"><textarea name="code1" class="code"></textarea></div></td>
+		      <td class="description1"><span></span></td>
+		      <td><textarea class="cost1" ></textarea></td>
+		      <td><textarea class="qty1"></textarea></td>
+		      <td><span class="price1"></span></td>
 		  </tr>
 		  </div>
   
@@ -148,14 +149,20 @@ $(document).ready(function() {
 		      <td colspan="2" class="total-line"><strong>Totaal</strong></td>
 		      <td class="total-value"><div id="total">&#8364;0.00</div></td>
 		  </tr>
-		 
+		  <tr>
+	 		 <td colspan="5" align="center"><input type="submit" value="Factureren" name="send" class="submit"/></td>
+ 		 </tr>
 		</table>	
+		
 <?php 
 
 ?>
 		</form>
 	</div>
+
 			<div id="terms">
 		  <h5>How to use</h5>
-		 Use <span style="color:red">w1, k1 or abc"</span> as code and hit TAB.
+		 Gebruik <span style="color:red">w1, k1 of abc"</span> als code en druk op TAB. Voor Klantnaam kan je kristof,maarten,tine,kevin, ... gebruiken.<br />
+		 User <span style="color:red">w1, k1 of abc"</span> as code and hit TAB. For clientnames you can use kristof,maarten,tine,kevin.
 		</div>
+
