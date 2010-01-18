@@ -79,7 +79,7 @@ $(document).ready(function() {
    // als we klikken dan toevoegen na de laatste rij
   $("#addrow").click(function(){
   	/*    $(".item-row:last").after('<tr class="item-row"><td class="item-name"><div class="delete-wpr"><input type="text" name="code" class="code"/><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td class="description"><span>Hier moet omschrijving komen</span></td><td><textarea class="cost">&#8364;</textarea></td><td><textarea class="qty"></textarea></td><td><span class="price">&#8364;0</span></td></tr>');*/
-    $(".item-row:last").after('<tr class="item-row"><td class="item-name"><div class="delete-wpr"><textarea name="code" class="code"></textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td class="description"><textarea></textarea></td><td><textarea disabled="disabled" id="disabled" name="cost[]" class="cost"></textarea></td><td><textarea class="qty" name="qty[]">1</textarea></td><td><span class="price">&#8364;0</span></td></tr>');
+    $(".item-row:last").after('<tr class="item-row"><td class="item-name"><div class="delete-wpr"><textarea name="code" class="code"></textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td class="description"></td><td><textarea disabled="disabled" id="disabled" name="cost[]" class="cost"></textarea></td><td><textarea class="qty" name="qty[]">1</textarea></td><td><span class="price">&#8364;0</span></td></tr>');
     if ($(".delete").length > 0) $(".delete").show();
     bind();
   });

@@ -5,8 +5,10 @@
 	
 	<title>Factuur</title>
 		<link href="../styles/default.css" rel="stylesheet" type="text/css" />
+		<link rel="stylesheet" type="text/css" href="../styles/jquery.autocomplete.css" />
 		<script type="text/javascript" src="../js/jquery-1.3.2.min.js"></script>
 		<script type="text/javascript" src="../js/factuur.js"></script>
+		<script type='text/javascript' src='../js/jquery.autocomplete.js'></script>
 
 </head>
 

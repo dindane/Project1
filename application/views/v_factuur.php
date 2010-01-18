@@ -1,3 +1,37 @@
+<link rel="stylesheet" type="text/css" href="../styles/autocomplete.css" />
+<script type="text/javascript">
+function lookup(inputString) {	
+if(inputString.length == 0) {
+		// Hide the suggestion box.
+		$('#suggestions').hide();
+	} else {
+		$.post("<?php base_url();?>/kassa/application/models/autocomplete.php", {queryString: ""+inputString+""}, function(data){
+			if(data.length >0) {
+				$('#suggestions').show();
+				$('#autoSuggestionsList').html(data);
+				$('#alert').html(data);
+				$('#alert').hide();
+			}			
+		});
+	}
+
+} // lookup
+var check = function(){	
+	$("#inputString").blur(function(){
+				if($('#alert').html() === "Sorry, de opgegeven klant bestaat niet."){
+					$('#alert').css("color","red").show();
+				}else{
+					$('#alert').hide();
+				}
+				});
+	
+}	
+function fill(thisValue) {
+	$('#inputString').val(thisValue);
+	setTimeout("$('#suggestions').hide();", 200);
+}
+</script>
+
 <script type="text/javascript">
 var calculate = function(){	
   	$('#loading').hide(); // ladenprentje verstoppe bij t begin
@@ -34,11 +68,11 @@ var calculate = function(){
  
 $(document).ready(function() {
 	calculate();
-	$('#test').hide();
+	check();	
+	//$('#test').hide();
 });
 </script>
 	<div id="page-wrap">
-
 		<div id="header">FACTUUR</div>
 		<div id="identity">		
             <div id="address">
@@ -52,10 +86,21 @@ $(document).ready(function() {
 		</div>
 		
 		<div style="clear:both"></div>
-		
 		<div id="customer">
-            <span id="customer-title">Klantnaam</span>
-
+            <span id="customer-title">Tip klantnaam</span>
+			<form>
+				<div style="clear:both"></div>
+				<span>
+					<input type="text" size="30" value="" id="inputString" onkeyup="lookup(this.value);" onblur="fill();" />
+				<span id="alert"></span>
+				</span>
+				<div class="suggestionsBox" id="suggestions" style="display: none;">
+						<img src="../img/upArrow.png" style="position: relative; top: -12px; left: 30px;" alt="upArrow" />
+						<div class="suggestionList" id="autoSuggestionsList">
+							&nbsp;
+						</div>
+				</div>
+		</form>
             <table id="meta">
                 <tr>
                     <td class="meta-head"><strong>Factuur #</strong></td>

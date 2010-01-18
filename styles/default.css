@@ -46,3 +46,6 @@ textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.
 
 .delete-wpr { position: relative; }
 .delete { display: block; color: #000; text-decoration: none; position: absolute; background: #EEEEEE; font-weight: bold; padding: 0px 3px; border: 1px solid; top: -6px; left: -22px; font-family: Verdana; font-size: 12px; }
+
+#customer textarea {background-color:#EEFF88; height: 20px; padding: 5px; width: 195px; }
+#customer input {background-color:#EEFF88; height: 20px; padding: 5px; width: 195px; border:0px; }

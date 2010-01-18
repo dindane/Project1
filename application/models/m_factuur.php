@@ -21,6 +21,6 @@ class M_factuur extends Model
 			}//end foreach	
 			return $data;
 		}
-    }    
+    }  
 }
 ?>
