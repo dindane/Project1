@@ -69,7 +69,7 @@ var calculate = function(){
 $(document).ready(function() {
 	calculate();
 	check();	
-	//$('#test').hide();
+	$('#test').hide();
 });
 </script>
 	<div id="page-wrap">
