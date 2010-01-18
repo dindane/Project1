@@ -30,15 +30,21 @@ class Welcome extends Controller {
 		echo $prijs['prijs'];
     }
     function factureer() {
+		echo '<pre>';
+		print_r($_POST);
+		echo '</pre>';
+		
 		if(isset($_POST['send'])){
 		// eerste manier 
-		print_r($_POST['code']);
+	//	print_r($_POST['code']);
     	// tweede manier
     	   $code = $_POST['code'];
-		   $n        = count($code);
+		    $n = count($_POST['code']);
+		   echo $n;
 		  for ($i = 0; $i < $n; $i++) {
 		      echo $code[$i]."<br/>";
 		   }
+
 		} 
 	}
 }
